@@ -13,23 +13,19 @@ The UI uses Material UI components with a light, clean theme and is responsive f
 
 ### Screenshots
 
-The app includes four main views. Screenshots are referenced from the `public/` folder with the following file names:
+The app includes four main views. Screenshots are stored in the `public/` folder with the following file names:
 
-- `pokedex-home.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
+- `pokedex-preview.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
 - `pokedex-part1.png` – Part 1 page showing single Pokémon lookup results.  
 - `pokedex-part2.png` – Part 2 page showing the Pokedex table for multiple names.  
 - `pokedex-part3.png` – Part 3 page showing the filterable, paginated Pokedex by type.
 
-Example markdown references:
+Rendered in this README:
 
-```markdown
-![Home page](public/pokedex-home.png)
+![Home page](public/pokedex-preview.png)
 ![Part 1 – single Pokémon](public/pokedex-part1.png)
 ![Part 2 – Pokedex table](public/pokedex-part2.png)
 ![Part 3 – filterable Pokedex](public/pokedex-part3.png)
-```
-
-Currently, the `public/pokedex-home.png` image is used as the primary preview for the assignment.
 
 ## Prerequisites
 
