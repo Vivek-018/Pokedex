@@ -1,66 +1,93 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import Link from "next/link";
+import { Box, Container, Stack, Typography, Button } from "@mui/material";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+    <Container
+      maxWidth="md"
+      sx={{
+        py: { xs: 4, md: 8 },
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={(theme) => ({
+          width: "100%",
+          p: { xs: 3, md: 4 },
+          borderRadius: 4,
+          bgcolor: "background.paper",
+          boxShadow: 6,
+          border: "1px solid",
+          borderColor: "divider",
+          backgroundImage: `radial-gradient(circle at top left, ${theme.palette.primary.light}22, transparent 55%)`,
+        })}
+      >
+        <Stack spacing={4}>
+          <Box>
+            <Typography
+              variant="overline"
+              color="primary"
+              sx={{ letterSpacing: 1.5 }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+              Pokedex Demo
+            </Typography>
+            <Typography
+              variant="h3"
+              fontWeight={800}
+              gutterBottom
+              sx={{ mt: 1, fontSize: { xs: 28, md: 34 } }}
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              Pokedex Assignment
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 520 }}>
+              Explore a clean, modular implementation of the three Pokedex
+              assignment parts using Next.js, tRPC, Prisma with Postgres, and
+              Material UI. Use the sections below to jump into each part.
+            </Typography>
+          </Box>
+
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={2}
+            sx={{ width: "100%", pt: 1 }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <Button
+              component={Link}
+              href="/part1"
+              variant="contained"
+              fullWidth
+              sx={{ py: 1.4, fontWeight: 600 }}
+            >
+              Part 1 – Single Pokémon
+            </Button>
+            <Button
+              component={Link}
+              href="/part2"
+              variant="outlined"
+              color="primary"
+              fullWidth
+              sx={{ py: 1.4, fontWeight: 600 }}
+            >
+              Part 2 – Pokedex Table
+            </Button>
+            <Button
+              component={Link}
+              href="/part3"
+              variant="outlined"
+              color="secondary"
+              fullWidth
+              sx={{ py: 1.4, fontWeight: 600 }}
+            >
+              Part 3 – Filterable Pokedex
+            </Button>
+          </Stack>
+        </Stack>
+      </Box>
+    </Container>
   );
 }
