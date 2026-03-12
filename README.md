@@ -11,11 +11,25 @@ It is designed to be simple, readable, and close to what you would submit for a 
 
 The UI uses Material UI components with a light, clean theme and is responsive for both mobile and desktop.
 
-### Screenshot
+### Screenshots
 
-The screenshot below shows the filterable Pokedex view used in Part 3:
+The app includes four main views. Screenshots are referenced from the `public/` folder with the following file names:
 
-![Pokedex assignment preview](public/pokedex-preview.png)
+- `pokedex-home.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
+- `pokedex-part1.png` – Part 1 page showing single Pokémon lookup results.  
+- `pokedex-part2.png` – Part 2 page showing the Pokedex table for multiple names.  
+- `pokedex-part3.png` – Part 3 page showing the filterable, paginated Pokedex by type.
+
+Example markdown references:
+
+```markdown
+![Home page](public/pokedex-home.png)
+![Part 1 – single Pokémon](public/pokedex-part1.png)
+![Part 2 – Pokedex table](public/pokedex-part2.png)
+![Part 3 – filterable Pokedex](public/pokedex-part3.png)
+```
+
+Currently, the `public/pokedex-home.png` image is used as the primary preview for the assignment.
 
 ## Prerequisites
 
