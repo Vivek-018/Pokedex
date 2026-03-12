@@ -23,15 +23,15 @@ export function TRPCProvider({ children }: TRPCProviderProps) {
       }),
   );
 
-  const [trpcClient] = useState(() =>
-    trpc.createClient({
-      transformer: SuperJSON,
-      links: [
-        httpBatchLink({
-          url: "/api/trpc",
-        }),
-      ],
-    }),
+  const [trpcClient] = useState(
+    () =>
+      trpc.createClient({
+        links: [
+          httpBatchLink({
+            url: "/api/trpc",
+          }),
+        ],
+      }),
   );
 
   return (
