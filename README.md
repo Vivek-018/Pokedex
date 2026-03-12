@@ -15,17 +15,17 @@ The UI uses Material UI components with a light, clean theme and is responsive f
 
 The app includes four main views. Screenshots are stored in the `public/` folder with the following file names:
 
-- `pokedex-preview.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
+- `pokedex-home.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
 - `pokedex-part1.png` – Part 1 page showing single Pokémon lookup results.  
 - `pokedex-part2.png` – Part 2 page showing the Pokedex table for multiple names.  
 - `pokedex-part3.png` – Part 3 page showing the filterable, paginated Pokedex by type.
 
 Rendered in this README:
 
-![Home page](public/pokedex-preview.png)
-![Part 1 – single Pokémon](public/pokedex-part1.png)
-![Part 2 – Pokedex table](public/pokedex-part2.png)
-![Part 3 – filterable Pokedex](public/pokedex-part3.png)
+Home page
+Part 1 – single Pokémon
+Part 2 – Pokedex table
+Part 3 – filterable Pokedex
 
 ## Prerequisites
 
@@ -70,3 +70,4 @@ On Vercel:
 - Set `DATABASE_URL` in the project’s environment variables.
 - Vercel will run `npm install` and `npm run build` automatically.  
 No additional build steps are required beyond Prisma’s default generate hook.
+
