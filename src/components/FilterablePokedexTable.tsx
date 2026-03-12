@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Pagination, Stack, Typography } from "@mui/material";
+import { keepPreviousData } from "@tanstack/react-query";
 import { trpc } from "@/trpc/client";
 import { PokedexTable } from "./PokedexTable";
 import { PokemonTypeSelection } from "./PokemonTypeSelection";
@@ -19,7 +20,7 @@ export function FilterablePokedexTable() {
       pageSize: 5,
     },
     {
-      keepPreviousData: true,
+      placeholderData: keepPreviousData,
     },
   );
 
