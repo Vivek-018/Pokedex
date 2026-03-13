@@ -40,6 +40,7 @@ export default function Home() {
               variant="h3"
               fontWeight={800}
               gutterBottom
+              color="text.primary"
               sx={{ mt: 1, fontSize: { xs: 28, md: 34 } }}
             >
               Pokedex Assignment

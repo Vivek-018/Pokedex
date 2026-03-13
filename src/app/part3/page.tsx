@@ -51,7 +51,8 @@ export default function Part3Page() {
             <Button
               component={Link}
               href="/"
-              variant="text"
+              variant="contained"
+              color="primary"
               size="small"
               sx={{ alignSelf: { xs: "flex-start", sm: "center" } }}
             >

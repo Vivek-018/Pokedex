@@ -79,7 +79,8 @@ export default function Part1Page() {
             <Button
               component={Link}
               href="/"
-              variant="text"
+              variant="contained"
+              color="primary"
               size="small"
               sx={{ alignSelf: { xs: "flex-start", sm: "center" } }}
             >
