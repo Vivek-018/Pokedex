@@ -1,37 +1,45 @@
-## Pokedex Assignment App
+## Pokedex Assignment
 
-This project is a small Pokedex-style assignment built with **Next.js App Router**, **tRPC**, **Prisma + PostgreSQL**, **React Query**, and **Material UI**.  
-It is designed to be simple, readable, and close to what you would submit for a technical assignment.
+Modern Pokedex-style web app built with **Next.js App Router (TypeScript)**, **tRPC**, **Prisma + PostgreSQL (Neon)**, **React Query**, and **Material UI**.  
+The project is structured to be clean, modular, and easy to review for a technical assignment.
 
-### Overview
+### Features
 
-- **Part 1** – Lookup a single Pokémon by name.
-- **Part 2** – Render a Pokedex table for a comma‑separated list of names.
-- **Part 3** – Filterable, paginated Pokedex by Pokémon type.
+- **Part 1 – Single Pokémon lookup**  
+  Form that accepts a Pokémon name (e.g. `Bulbasaur`) and renders a single row with **ID, name, types, and sprite** using a reusable `PokemonRow` component.
 
-The UI uses Material UI components with a light, clean theme and is responsive for both mobile and desktop.
+- **Part 2 – Pokedex table for an array of names**  
+  Form that accepts a **comma‑separated list** of Pokémon names and displays them in a `PokedexTable` backed by a tRPC procedure returning an array of Pokémon.
+
+- **Part 3 – Filterable, paginated Pokedex**  
+  `FilterablePokedexTable` combines `PokemonTypeSelection` and `PokedexTable` to show only Pokémon matching the selected **type**, with simple pagination implemented on top of Prisma + tRPC.
+
+- **Tech & quality**  
+  - tRPC + React Query for **type‑safe data fetching & caching**  
+  - Prisma + PostgreSQL for the **Pokemon database**, seeded with the first ~50 Kanto Pokémon  
+  - Material UI for a **responsive, assignment‑ready UI** (desktop & mobile)
 
 ### Screenshots
 
-The app includes four main views. Screenshots are stored in the `public/` folder with the following file names:
+Screenshots live in the `public/` folder so they render correctly on GitHub and Vercel:
 
-- `pokedex-home.png` – Home page with navigation to Part 1, Part 2, and Part 3.  
-- `pokedex-part1.png` – Part 1 page showing single Pokémon lookup results.  
-- `pokedex-part2.png` – Part 2 page showing the Pokedex table for multiple names.  
-- `pokedex-part3.png` – Part 3 page showing the filterable, paginated Pokedex by type.
+- `public/pokedex-home.png` – Home page with navigation to all three parts  
+- `public/pokedex-part1.png` – Part 1: single Pokémon lookup  
+- `public/pokedex-part2.png` – Part 2: Pokedex table for multiple names  
+- `public/pokedex-part3.png` – Part 3: type‑filterable, paginated Pokedex  
 
-Rendered in this README:
+Rendered for quick review:
 
-Home page
-Part 1 – single Pokémon
-Part 2 – Pokedex table
-Part 3 – filterable Pokedex
+![Home](public/pokedex-home.png)
+![Part 1 – Single Pokémon](public/pokedex-part1.png)
+![Part 2 – Pokedex Table](public/pokedex-part2.png)
+![Part 3 – Filterable Pokedex](public/pokedex-part3.png)
 
 ## Prerequisites
 
-- Node.js 18+  
-- A PostgreSQL database  
-- `DATABASE_URL` configured in `.env` (see `.env.example`).
+- **Node.js** 18 or higher  
+- **PostgreSQL** database (e.g. Neon)  
+- `DATABASE_URL` set in `.env` pointing to your Postgres instance
 
 ## Local setup
 
@@ -41,7 +49,7 @@ Install dependencies:
 npm install
 ```
 
-Run Prisma migrations and seed the database:
+Run Prisma migrations and seed the database (creates the `Pokemon` table and inserts ~50 Pokémon):
 
 ```bash
 npx prisma migrate dev
@@ -58,16 +66,16 @@ Then open `http://localhost:3000` in your browser.
 
 ## Build & deploy
 
-To create a production build locally:
+Create a production build locally:
 
 ```bash
 npm run build
 npm start
 ```
 
-On Vercel:
+On **Vercel**:
 
-- Set `DATABASE_URL` in the project’s environment variables.
-- Vercel will run `npm install` and `npm run build` automatically.  
-No additional build steps are required beyond Prisma’s default generate hook.
+- Configure `DATABASE_URL` in the project environment variables  
+- Vercel will run `npm install`, `prisma generate` (via `postinstall`), and `npm run build` automatically  
+- No extra custom build steps are required
 
